@@ -1,64 +1,60 @@
-import Image from "next/image";
+import React from "react";
+import { analyzeIPO } from "./actions";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <div className="min-h-screen w-full bg-[#b0dee9] relative flex flex-col items-center justify-center font-sans">
+      {/* Back Arrow - Top Left */}
+      <button 
+        className="absolute top-8 left-8 p-2 hover:opacity-70 transition-opacity"
+        aria-label="Go back"
+      >
+        <svg 
+          width="86" 
+          height="20" 
+          viewBox="0 0 86 20" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 10L86 0V20L0 10Z" fill="black"/> 
+        </svg>
+      </button>
+
+      {/* Main Content */}
+      <main className="flex flex-col items-center gap-8 w-full px-4">
+        <h1 className="text-4xl md:text-7xl font-serif text-black tracking-tight text-center">
+          ENTER IPO TICKER
+        </h1>
+
+        <form action={analyzeIPO} className="flex flex-col md:flex-row items-center gap-4">
+          {/* Input Box */}
+          <div className="relative w-full md:w-auto">
+            <input
+              name="ticker"
+              type="text"
+              placeholder="FIG"
+              required
+              className="w-full md:w-[448px] h-[97px] bg-[#b0dee9] border border-black text-center text-5xl text-black placeholder-black/30 focus:outline-none font-thin uppercase tracking-widest"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </div>
+
+          {/* Go Button */}
+          <button 
+            type="submit"
+            className="w-[47px] h-[59px] rounded-full border border-black flex items-center justify-center hover:bg-black/5 transition-colors shrink-0"
+            aria-label="Submit"
           >
-            Documentation
-          </a>
-        </div>
+            <svg 
+              width="14" 
+              height="20" 
+              viewBox="0 0 14 20" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M14 10L0 0V20L14 10Z" fill="black"/>
+            </svg>
+          </button>
+        </form>
       </main>
     </div>
   );
