@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -16,9 +16,11 @@ export default function SearchPage() {
 
   return (
     <div className="min-h-screen bg-[#C5E8E8] flex flex-col items-center justify-center px-4">
+      <Link href='/'>
       <div className="absolute top-8 left-8">
         <h1 className="text-2xl font-light tracking-wider text-gray-800">LAUNCH</h1>
       </div>
+      </Link>
 
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
