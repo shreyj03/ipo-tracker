@@ -6,6 +6,10 @@ A modern web application that provides AI-powered stock analysis using OpenAI's 
 **Boston University**  
 **Professor: Taymaz Davoodi**
 
+## LIVE DEMO
+
+Visit **[LAUNCH](https://ipo-tracker-two.vercel.app)** to try the application without any setup!
+
 ## Features
 
 - **AI-Powered Analysis**: Leverages GPT-4 to analyze stocks and provide detailed investment insights
@@ -52,10 +56,6 @@ Before you begin, ensure you have the following installed:
    OPENAI_API_KEY=your_openai_api_key
 ```
 
-   Replace the values with your actual credentials:
-   - `MONGODB_URI`: Your MongoDB connection string (format: `mongodb+srv://<username>:<password>@cluster.mongodb.net/<database>`)
-   - `OPENAI_API_KEY`: Your OpenAI API key (get one from [OpenAI Platform](https://platform.openai.com/))
-
 4. **Run the development server**
 ```bash
    npm run dev
@@ -89,10 +89,6 @@ ipo-tracker/
 ├── tsconfig.json
 └── README.md
 ```
-
-## LIVE DEMO
-
-This project can be viewed here [LAUNCH]([https://vercel.com/](https://ipo-tracker-two.vercel.app)):
 
 ## Contributing
 
