@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LAUNCH - AI-Powered Stock Analysis
 
-## Getting Started
+A modern web application that provides AI-powered stock analysis using OpenAI's GPT-4. Enter any stock ticker symbol to receive comprehensive insights including pros, cons, company description, and an investment attractiveness score.
 
-First, run the development server:
+**Final Project for CS 391: Web Application Development Fall 2025**  
+**Boston University**  
+**Professor: Taymaz Davoodi**
 
+## Features
+
+- **AI-Powered Analysis**: Leverages GPT-4 to analyze stocks and provide detailed investment insights
+- **Comprehensive Reports**: View company descriptions, pros and cons, and quantitative attractiveness scores
+- **Modern UI**: Clean, minimalist interface with smooth animations and responsive design
+- **MongoDB Integration**: Stores analyzed tickers and scores for future reference
+- **Real-time Analysis**: Get instant stock analysis results
+
+## Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: TypeScript
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **AI**: [OpenAI API](https://openai.com/) (GPT-4)
+- **Database**: [MongoDB](https://www.mongodb.com/)
+- **Runtime**: React 19
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js 20.9.0 or higher
+- npm or yarn
+- MongoDB instance (local or Atlas)
+- OpenAI API key
+
+## Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   git clone https://github.com/shreyj03/ipo-tracker.git
+   cd ipo-tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+   npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Set up environment variables**
+   
+   Create a `.env.local` file in the root directory:
+```env
+   MONGODB_URI=your_mongodb_connection_string
+   OPENAI_API_KEY=your_openai_api_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   Replace the values with your actual credentials:
+   - `MONGODB_URI`: Your MongoDB connection string (format: `mongodb+srv://<username>:<password>@cluster.mongodb.net/<database>`)
+   - `OPENAI_API_KEY`: Your OpenAI API key (get one from [OpenAI Platform](https://platform.openai.com/))
 
-## Learn More
+4. **Run the development server**
+```bash
+   npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
+```
+ipo-tracker/
+├── app/
+│   ├── api/
+│   │   └── openai.ts          # OpenAI integration and server actions
+│   ├── report/
+│   │   └── [ticker]/
+│   │       ├── page.tsx       # Stock analysis results page
+│   │       └── loading.tsx    # Loading state
+│   ├── search/
+│   │   └── page.tsx           # Search page for entering tickers
+│   ├── globals.css            
+│   ├── layout.tsx             
+│   └── page.tsx               # Landing page
+├── lib/
+│   └── insertNewTicker.ts     # MongoDB insert function
+├── public/                    
+├── db.ts                      # MongoDB connection utilities
+├── types.ts                   # TypeScript type definitions              
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## LIVE DEMO
 
-## Deploy on Vercel
+This project can be viewed here [LAUNCH]([https://vercel.com/](https://ipo-tracker-two.vercel.app)):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is part of a team collaboration. Current team members:
+- **sShrey Jain3** - Search page & integration
+- **Ibrahim Hussain** - LLM integration & results
+- **Yihang Duanmu** - Database integration
+- **David Ren** - Landing page
+
+## Known Issues
+
+- The OpenAI API may not have access to very recent IPO data
+- Analysis is based on GPT-4's training data and may not reflect real-time market conditions
+- Rate limits apply based on your OpenAI API plan
+
+## License
+
+This project is private and maintained by the development team.
+
+## Acknowledgments
+
+- [Next.js](https://nextjs.org/) - React framework
+- [OpenAI](https://openai.com/) - AI-powered analysis
+- [MongoDB](https://www.mongodb.com/) - Database
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Vercel](https://vercel.com/) - Hosting platform
