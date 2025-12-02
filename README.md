@@ -93,7 +93,7 @@ ipo-tracker/
 ## Contributing
 
 This project is part of a team collaboration. Current team members:
-- **sShrey Jain3** - Search page & integration
+- **Shrey Jain** - Search page & integration
 - **Ibrahim Hussain** - LLM integration & results
 - **Yihang Duanmu** - Database integration
 - **David Ren** - Landing page
