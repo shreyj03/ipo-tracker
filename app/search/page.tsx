@@ -26,7 +26,7 @@ export default function SearchPage() {
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
           <h2 className="text-3xl font-light tracking-widest text-gray-800 mb-2">
-            ENTER STOCK TICKER
+            ENTER COMPANY TICKER
           </h2>
         </div>
 
