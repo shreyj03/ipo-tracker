@@ -1,3 +1,5 @@
+//Result Page made by Ibrahim Hussain. 
+
 import React from "react";
 // import the api function to fetch analysis data
 import { getIPOAnalysis } from "../../api/openai";
